@@ -31,7 +31,7 @@ query = get_voice_input() or input("Enter your search query: ")
 
 # searching YouTube using API (Youtube Data API v3)
 def search_youtube(query):
-    api_key = "AIzaSyDCGHvZ7ka9GapR8dvfbSfcs8hpBSxTzLc" 
+    api_key = "AIzaSyDCGHvZ7ka9GapR8dvfbSfcs8hpBSxTzLc"  #hardcoded for now (for submission)
     youtube = build("youtube", "v3", developerKey=api_key)
 
     try:
@@ -73,7 +73,7 @@ def search_youtube(query):
 
 # Ranking with Gemini AI
 def rank_with_gemini(videos, query):
-    genai.configure(api_key="AIzaSyBZeTyKGXwuoPeVcVyL47jIGfqMmlPNbzc")
+    genai.configure(api_key="AIzaSyBZeTyKGXwuoPeVcVyL47jIGfqMmlPNbzc") #hardcoded for now (for submission)
     model = genai.GenerativeModel("models/gemini-2.0-flash")
 
     titles_text = "\n".join([f"{i+1}. {v['title']}" for i, v in enumerate(videos)])
